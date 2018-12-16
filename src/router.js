@@ -69,30 +69,34 @@ const router = new Router({
           },
           children: [
               {
-                  path: 'experience',
+                  path: 'immersive',
+                  name: 'Immersive',
                   meta: {
                       title: 'Experience',
                       matcher: (event) => event.type.toLowerCase() === 'immersive',
                       showLocation: true,
                   },
-                  component: buildView('Immersive'),
+                  component: buildView('AImmersive'),
               },
               {
                   path: 'music',
+                  name: 'Music',
                   meta: {
                       title: 'Music',
                       matcher: (event) => event.type.toLowerCase() === 'music',
                       showLocation: true,
                   },
-                  component: buildView('Music'),
+                  component: buildView('AMusic'),
               },
               {
-                path: 'experience',
+                path: 'installation',
+                name: 'Installation',
                 meta: {
                     title: 'Install',
                     matcher: (event) => event.type.toLowerCase() === 'installation',
+                    showLocation: true,
                 },
-                component: buildView('Installation'),
+                component: buildView('AInstallation'),
             },
           ]
         }

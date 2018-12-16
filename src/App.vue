@@ -1,4 +1,4 @@
-<template id="root">
+<template>
   <v-ons-navigator
     swipeable
     :page-stack="pageStack"

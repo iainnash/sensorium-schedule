@@ -35,7 +35,7 @@
         </div>
       </ons-card>
       <br />
-      <v-ons-button class="button-light" target="_blank" href="http://sensoriumholiday.splashthat.com">See event info</v-ons-button>
+      <v-ons-button class="button-light" target="_blank" @click="go">See event info</v-ons-button>
     </p>
   </PageTemplate>
 </template>
@@ -53,6 +53,9 @@ export default {
   methods: {
     push(floor) {
       this.$emit('push-page', ViewFloor, {data: floor});
+    },
+    go() {
+      window.open('http://sensoriumholiday.splashthat.com');
     }
   }
 }

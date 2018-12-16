@@ -25,6 +25,9 @@ window.hi = (data) => {
       } else {
         ret.sort_starttime = 40;
       }
+      if (ret.instagram) {
+        ret.instagrams = ret.instagram.split(',').map((i) => i.substr(1));
+      }
       
     });
     return ret;

@@ -7,6 +7,7 @@
       <div class="center">Sensorium Map // {{title}}</div>
     </v-ons-toolbar>
     <slot />
+    <div class="c">made with <ons-icon icon="fa-heart" /> by <a target="_blank" href="http://instagram.com/iainnash">@iainnash</a></div>
   </v-ons-page>
 </template>
 
@@ -16,3 +17,15 @@ export default {
     props: ['title'],
 }
 </script>
+
+<style>
+.c {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+.c {
+  color: #eee;
+  font-size: 0.8em;
+}
+</style>
