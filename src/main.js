@@ -21,8 +21,9 @@ window.hi = (data) => {
       ret[key.replace('gsx$', '')] = event[key]['$t'];
       ret.index = indx;
       if (ret.starttime) {
-        const startAt = ret.starttime.replace(':', '').substr(0, 4);
-        ret.sort_starttime = ret.starttime.match('AM') ? startAt + 12 : startAt;
+        ret.sort_starttime = new Date(`2000-01-${ret.starttime.match(/AM/i) ? '2' : '1'} ${ret.starttime}`).getTime();
+      } else {
+        ret.sort_starttime = 40;
       }
       
     });

@@ -5,9 +5,19 @@
                 <div class="right" v-if="event.starttime">
                     {{event.starttime}} – {{event.endtime}}
                 </div>
+                <div class="right" v-if="!event.starttime">
+                    Throughout the Night
+                </div>
                 <div class="title">{{event.title}}</div>
                 <div class="content">
-                    {{event.description}}
+                    <div v-if="$route.meta.showLocation">
+                        {{LOCATION_MAP[event.location]}}
+                    </div>
+                    <div v-if="event.artist">
+                        <i>{{event.artist}}</i>
+                        <br />
+                    </div>
+                    <div>{{event.description}}</div>
                 </div>
             </ons-card>
         </div>
@@ -23,10 +33,25 @@ export default {
         PageTemplate,
     },
     data() {
-        const list = window.events.filter((event) => this.$route.meta.matcher(event));
+        const list = window.events.filter((event) => this.$route.meta.matcher(event)).sort(function(a, b) { return a.sort_starttime - b.sort_starttime; });
         return {
             list,
+            LOCATION_MAP: {
+                'basement': 'Basement',
+                'main': 'Ground',
+                '3rd': 'Second floor',
+                '4th': 'Third floor',
+                '5th': 'Penthouse',
+            }
         };
+    },
+    methods: {
+        getFloor(floor) {
+            const floorMap = {
+                
+            };
+            return floorMap[floor];
+        }
     }
 }
 </script>

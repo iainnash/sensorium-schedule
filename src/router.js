@@ -38,6 +38,7 @@ const router = new Router({
               meta: {
                   title: `Floor ${floor}`,
                   matcher: (event) => event.location.toLowerCase() === floor,
+                  showLocation: true,
               },
               component: buildView(`floor_${floor}`),
           })),
@@ -52,6 +53,7 @@ const router = new Router({
               meta: {
                   title: `Stage ${stage}`,
                   matcher: (event) => event.location.toLowerCase() === stage && event.type === 'music',
+                  showLocation: true,
               },
               component: buildView(stage),
           })),
@@ -63,23 +65,34 @@ const router = new Router({
           meta: {
             title: 'Everything',
             matcher: (event) => true,
+            showLocation: true,
           },
           children: [
               {
                   path: 'experience',
                   meta: {
                       title: 'Experience',
-                      matcher: (event) => event.type.toLowerCase() === 'experience',
+                      matcher: (event) => event.type.toLowerCase() === 'immersive',
+                      showLocation: true,
                   },
-                  component: buildView('Experience'),
+                  component: buildView('Immersive'),
+              },
+              {
+                  path: 'music',
+                  meta: {
+                      title: 'Music',
+                      matcher: (event) => event.type.toLowerCase() === 'music',
+                      showLocation: true,
+                  },
+                  component: buildView('Music'),
               },
               {
                 path: 'experience',
                 meta: {
                     title: 'Install',
-                    matcher: (event) => event.type.toLowerCase() === 'install',
+                    matcher: (event) => event.type.toLowerCase() === 'installation',
                 },
-                component: buildView('Install'),
+                component: buildView('Installation'),
             },
           ]
         }

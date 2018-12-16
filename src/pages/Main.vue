@@ -7,9 +7,9 @@
         <div class="content">
           <ons-list>
             <ons-list-item tappable modifier="chevron" @click="$router.push({path: '/floor/basement'})">Basement</ons-list-item>
-            <ons-list-item tappable modifier="chevron" @click="$router.push({path: '/floor/main'})">Main</ons-list-item>
-            <ons-list-item tappable modifier="chevron" @click="$router.push({path: '/floor/3rd'})">Floor 3</ons-list-item>
-            <ons-list-item tappable modifier="chevron" @click="$router.push({path: '/floor/4th'})">Floor 4</ons-list-item>
+            <ons-list-item tappable modifier="chevron" @click="$router.push({path: '/floor/main'})">Ground</ons-list-item>
+            <ons-list-item tappable modifier="chevron" @click="$router.push({path: '/floor/3rd'})">Floor 2</ons-list-item>
+            <ons-list-item tappable modifier="chevron" @click="$router.push({path: '/floor/4th'})">Floor 3</ons-list-item>
             <ons-list-item tappable modifier="chevron" @click="$router.push({path: '/floor/5th'})">Penthouse</ons-list-item>
           </ons-list>
         </div>
@@ -27,12 +27,14 @@
         <div class="title">View all by</div>
         <div class="content">
           <ons-list>
-            <ons-list-item tappable modifier="chevron" @click="$router.push({path: '/all'})">Time</ons-list-item>
-            <ons-list-item tappable modifier="chevron" @click="$router.push({path: '/all/experience'})">Experience</ons-list-item>
-            <ons-list-item tappable modifier="chevron" @click="$router.push({path: '/all/install'})">Install</ons-list-item>
+            <ons-list-item tappable modifier="chevron" @click="$router.push({path: '/all'})">Everything</ons-list-item>
+            <ons-list-item tappable modifier="chevron" @click="$router.push({path: '/all/immersive'})">Immersive</ons-list-item>
+            <ons-list-item tappable modifier="chevron" @click="$router.push({path: '/all/installation'})">Installation</ons-list-item>
+            <ons-list-item tappable modifier="chevron" @click="$router.push({path: '/all/music'})">Music</ons-list-item>
           </ons-list>
         </div>
       </ons-card>
+      <br />
       <v-ons-button class="button-light" target="_blank" href="http://sensoriumholiday.splashthat.com">See event info</v-ons-button>
     </p>
   </PageTemplate>
